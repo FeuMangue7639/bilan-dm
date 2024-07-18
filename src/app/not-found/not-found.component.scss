@@ -1,0 +1,58 @@
+.not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+  
+    img {
+      width: 300px; /* Ajustez la taille de l'image selon vos besoins */
+      margin-bottom: 20px;
+    }
+  
+    h1 {
+      font-size: 3rem;
+      color: #f00; // Couleur rouge pour le titre
+      margin-bottom: 10px;
+    }
+  
+    p {
+      font-size: 1.5rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+  
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff; // Couleur bleue pour le bouton
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #0056b3; // Couleur bleu foncé au survol
+      }
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  h1 {
+    animation: pulse 2s infinite alternate;
+  }
+  
+  
