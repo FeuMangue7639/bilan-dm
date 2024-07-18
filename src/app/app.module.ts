@@ -10,6 +10,12 @@ import { ArtisansComponent } from './artisans/artisans.component';
 import { AboutComponent } from './about/about.component';
 
 import { FormsModule } from '@angular/forms';
+import { AlimentationComponent } from './alimentation/alimentation.component';
+import { BatimentComponent } from './batiment/batiment.component';
+import { FabricationComponent } from './fabrication/fabrication.component';
+import { ServicesComponent } from './services/services.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +24,13 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     ArtisansComponent,
-    AboutComponent
+    AboutComponent,
+    AlimentationComponent,
+    BatimentComponent,
+    FabricationComponent,
+    ServicesComponent,
+    NotFoundComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,

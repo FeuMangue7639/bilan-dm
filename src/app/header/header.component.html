@@ -1,10 +1,29 @@
 <header>
-    <ul>
-      <li><a [routerLink]="['/']">
-        <img src="/Logo_au_petit_village.jpg" alt="Logo de l'entreprise">
-      </a></li>
-      <nav>
-        <li><a [routerLink]="['/about']">À propos</a></li>
-      </nav>
-    </ul>
-  </header>
+  <ul>
+    <li>
+      <a [routerLink]="['/']">
+        <img src="/src/assests/Logo.png" alt="Logo de l'entreprise">
+      </a>
+    </li>
+    <li class="nav-item dropdown" (mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">
+      <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button">
+        Catégories
+      </a>
+      <div class="dropdown-menu" [class.show]="dropdownOpen" aria-labelledby="categoriesDropdown">
+        <a class="dropdown-item" [routerLink]="['/alimentation']" (click)="closeDropdown()">Alimentation</a>
+        <a class="dropdown-item" [routerLink]="['/batiment']" (click)="closeDropdown()">Bâtiment</a>
+        <a class="dropdown-item" [routerLink]="['/fabrication']" (click)="closeDropdown()">Fabrication</a>
+        <a class="dropdown-item" [routerLink]="['/services']" (click)="closeDropdown()">Services</a>
+      </div>
+    </li>
+    <nav>
+      <li><a [routerLink]="['/about']">À propos</a></li>
+    </nav>
+  </ul>
+</header>
+
+
+
+
+
+
