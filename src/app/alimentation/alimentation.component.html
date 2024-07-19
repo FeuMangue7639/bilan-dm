@@ -1,1 +1,24 @@
-<p>alimentation works!</p>
+<div class="home-container">
+    <h1>Bienvenue chez Au petit village</h1>
+    <p>Au petit village est une entreprise spécialisée dans la vente de figurines faites main, inspirées d’Astérix & Obélix, capturant l'esprit et l'humour des célèbres personnages de bande dessinée.</p>
+  
+    <h2>Catalogue des artisans</h2>
+    <div class="search-sort-container">
+      <input type="text" placeholder="Rechercher par nom" [(ngModel)]="searchTerm" class="search-input">
+      <div class="sort-buttons">
+        <button (click)="sortByPrice('asc')" class="sort-button">Prix croissant</button>
+        <button (click)="sortByPrice('desc')" class="sort-button">Prix décroissant</button>
+      </div>
+    </div>
+  
+    <div class="artisan-list">
+      <div *ngFor="let artisan of filteredArtisans()" class="artisan-item">
+        <a [routerLink]="['/artisan', artisan.id]" class="artisan-link">
+          <h3>{{ artisan.name }}</h3>
+          <p class="numbers">{{ artisan.price }} €</p>
+          <img [src]="artisan.image" alt="{{ artisan.name }}">
+        </a>
+      </div>
+    </div>
+  </div>
+  
