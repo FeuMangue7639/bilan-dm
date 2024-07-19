@@ -1,0 +1,58 @@
+.artisan-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #FDD90B; /* Bordure jaune */
+    border-radius: 10px;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #F9D0A3; /* Fond de conteneur */
+    margin-bottom: 110px;
+    color: #151217; /* Couleur de texte par défaut */
+  }
+  
+  .artisan-detail-container h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #DA001E; /* Titre en rouge */
+    transition: color 0.3s;
+  }
+  
+  .artisan-detail-container img {
+    width: 300px; /* Largeur fixe pour les images */
+    height: 300px; /* Hauteur fixe pour les images */
+    object-fit: cover; /* Assure que les images remplissent complètement le conteneur */
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .artisan-detail-container img:hover {
+    transform: scale(1.05); /* Agrandir légèrement l'image au survol */
+  }
+  
+  .artisan-detail-container p {
+    margin: 10px 0;
+    font-size: 1.2em;
+  }
+  
+  .artisan-detail-container p.price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #151217; /* Prix en noir */
+    background-color: #FDD90B; /* Fond jaune pour le prix */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .artisan-detail-container p.price:hover {
+    background-color: #DA001E; /* Fond rouge au survol */
+    color: #fff; /* Texte blanc au survol */
+  }
+  

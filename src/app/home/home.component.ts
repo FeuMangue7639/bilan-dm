@@ -1,30 +1,40 @@
-import { Component, OnInit } from '@angular/core';
-import { ArtisansService, Artisan } from '../artisans.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-  artisans: Artisan[] = [];
+export class HomeComponent {
   searchTerm: string = '';
-  sortDirection: string = 'asc';
+  sortDirection: 'asc' | 'desc' = 'asc';
 
-  constructor(private artisansService: ArtisansService) {}
+  artisans = [
+    { id: 1, name: 'Artisan 1', price: 30, image: 'path/to/artisan1.jpg' },
+    { id: 2, name: 'Artisan 2', price: 20, image: 'path/to/artisan2.jpg' },
+    { id: 3, name: 'Artisan 3', price: 25, image: 'path/to/artisan3.jpg' },
+    { id: 4, name: 'Artisan 4', price: 40, image: 'path/to/artisan4.jpg' },
+    { id: 5, name: 'Artisan 5', price: 35, image: 'path/to/artisan5.jpg' },
+    { id: 6, name: 'Artisan 6', price: 45, image: 'path/to/artisan6.jpg' }
+  ];
 
-  ngOnInit(): void {
-    this.artisans = this.artisansService.getArtisans();
-  }
-
-  filteredArtisans(): Artisan[] {
-    let filtered = this.artisans.filter(artisan =>
+  filteredArtisans() {
+    let filtered = this.artisans.filter(artisan => 
       artisan.name.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
-    return filtered.sort((a, b) => this.sortDirection === 'asc' ? a.price - b.price : b.price - a.price);
+
+    filtered = filtered.sort((a, b) => {
+      if (this.sortDirection === 'asc') {
+        return a.price - b.price;
+      } else {
+        return b.price - a.price;
+      }
+    });
+
+    return filtered.slice(0, 3); // Return only the first three artisans
   }
 
-  sortByPrice(direction: string): void {
+  sortByPrice(direction: 'asc' | 'desc') {
     this.sortDirection = direction;
   }
 }
