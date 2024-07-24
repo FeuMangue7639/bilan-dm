@@ -1,6 +1,21 @@
 <div class="artisan-detail-container" *ngIf="artisan">
+  <div class="header">
     <h1>{{ artisan.name }}</h1>
-    <img [src]="artisan.image" alt="{{ artisan.name }}">
-    <p>{{ artisan.description }}</p>
-    <p class="price numbers">{{ artisan.price }} €</p>
+    <p class="note">{{ artisan.note }}</p>
   </div>
+
+  <div class="details">
+    <p>Spécialité: {{ artisan.specialty }}</p>
+    <p>Localisation: {{ artisan.location }}</p>
+    <p class="email">{{ artisan.email }}</p>
+    <p class="website">{{ artisan.website }}</p>
+  </div>
+
+  <div class="about">
+    <p><strong>À propos:</strong> {{ artisan.about }}</p>
+  </div>
+</div>
+
+
+
+<app-contact-form></app-contact-form>
