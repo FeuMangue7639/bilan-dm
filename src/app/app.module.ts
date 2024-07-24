@@ -17,6 +17,10 @@ import { ServicesComponent } from './services/services.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CategoriesComponent } from './categories/categories.component';
 
+import { HttpClientModule } from '@angular/common/http'; // Pour les requêtes HTTP
+import { ContactFormComponent } from './contact-form/contact-form.component'; // Assurez-vous que le chemin est correct
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,12 +34,14 @@ import { CategoriesComponent } from './categories/categories.component';
     FabricationComponent,
     ServicesComponent,
     NotFoundComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    ContactFormComponent // Assurez-vous que le composant est déclaré ici
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration()
