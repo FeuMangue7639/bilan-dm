@@ -7,12 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class ContactService {
 
-  private apiUrl = 'http://localhost:3000/send'; // Remplacez par l'URL de votre serveur Maildev
+  private apiUrl = 'http://localhost:4200/send-email'; // URL de votre serveur Node.js
 
   constructor(private http: HttpClient) { }
 
   sendEmail(contact: any): Observable<any> {
-    return this.http.post(this.apiUrl, contact);
+    return this.http.post<any>(this.apiUrl, contact);
   }
 }
+
 

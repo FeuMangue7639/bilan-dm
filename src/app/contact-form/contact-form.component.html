@@ -1,51 +1,70 @@
 <div class="contact-form-container">
-    <h2>Contactez-nous</h2>
-    <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
-      <div class="form-group">
-        <label for="name">Nom:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          [(ngModel)]="contact.name"
-          required
-        />
+  <h2>Contactez-nous</h2>
+  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <div class="form-group">
+      <label for="name">Nom:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="contact.name"
+        #name="ngModel"
+        required
+      />
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
+        <div *ngIf="name.errors?.['required']">Le nom est requis.</div>
       </div>
-  
-      <div class="form-group">
-        <label for="email">E-mail:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          [(ngModel)]="contact.email"
-          required
-        />
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="contact.email"
+        #email="ngModel"
+        required
+        email
+      />
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+        <div *ngIf="email.errors?.['required']">L'e-mail est requis.</div>
+        <div *ngIf="email.errors?.['email']">L'adresse e-mail est invalide.</div>
       </div>
-  
-      <div class="form-group">
-        <label for="subject">Objet:</label>
-        <input
-          type="text"
-          id="subject"
-          name="subject"
-          [(ngModel)]="contact.subject"
-          required
-        />
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Objet:</label>
+      <input
+        type="text"
+        id="subject"
+        name="subject"
+        [(ngModel)]="contact.subject"
+        #subject="ngModel"
+        required
+      />
+      <div *ngIf="subject.invalid && (subject.dirty || subject.touched)" class="error">
+        <div *ngIf="subject.errors?.['required']">L'objet est requis.</div>
       </div>
-  
-      <div class="form-group">
-        <label for="message">Message:</label>
-        <textarea
-          id="message"
-          name="message"
-          [(ngModel)]="contact.message"
-          rows="5"
-          required
-        ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea
+        id="message"
+        name="message"
+        [(ngModel)]="contact.message"
+        #message="ngModel"
+        rows="5"
+        required
+      ></textarea>
+      <div *ngIf="message.invalid && (message.dirty || message.touched)" class="error">
+        <div *ngIf="message.errors?.['required']">Le message est requis.</div>
       </div>
-  
-      <button type="submit">Envoyer</button>
-    </form>
-  </div>
+    </div>
+
+    <button type="submit" [disabled]="contactForm.invalid">Envoyer</button>
+  </form>
+</div>
+
   
