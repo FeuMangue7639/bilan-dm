@@ -1,1 +1,24 @@
-<p>services works!</p>
+<div class="home-container">
+    <h1>Bienvenue chez Trouve ton artisan</h1>
+    <p>Une entreprise spécialisée dans la recherche d'un artisan dans tout genre de domaine.</p>
+  
+    <h2>Catalogue des artisans</h2>
+    <div class="search-sort-container">
+      <input type="text" placeholder="Rechercher par nom" [(ngModel)]="searchTerm" class="search-input">
+      <div class="sort-buttons">
+        <button (click)="sortByNote('asc')" class="sort-button">Note croissante</button>
+        <button (click)="sortByNote('desc')" class="sort-button">Note décroissante</button>
+      </div>
+    </div>
+  
+    <div class="artisan-list">
+      <div *ngFor="let artisan of filteredArtisans()" class="artisan-item">
+        <a [routerLink]="['/artisan', artisan.id]" class="artisan-link">
+          <h3>{{ artisan.name }}</h3>
+          <p class="numbers">Spécialité: {{ artisan.specialty }}</p>
+          <p class="location">Localisation: {{ artisan.location }}</p>
+          <p class="note">Note: {{ artisan.note }} étoiles</p>
+        </a>
+      </div>
+    </div>
+  </div>
