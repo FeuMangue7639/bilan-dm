@@ -30,8 +30,11 @@ export class ContactFormComponent {
       }, error => {
         console.error('Erreur lors de l\'envoi du message', error);
       });
+    } else {
+      console.error('Veuillez remplir tous les champs du formulaire.');
     }
   }
 }
+
 
 

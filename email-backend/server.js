@@ -1,11 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const cors = require('cors'); // Ajoutez ceci
 
 const app = express();
-const port = 3000;
+const port = 4200;
 
 // Middleware
+app.use(cors()); // Utilisez cors ici
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -42,3 +44,5 @@ app.post('/send-email', (req, res) => {
 app.listen(port, () => {
   console.log(`Serveur en écoute sur http://localhost:${port}`);
 });
+
+
