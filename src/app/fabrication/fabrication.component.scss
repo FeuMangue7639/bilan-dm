@@ -1,0 +1,131 @@
+.home-container {
+    padding: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #F9D0A3;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 0.5em;
+    animation: fadeInDown 1s;
+    color: #151217;
+  }
+  
+  p {
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 2em;
+    animation: fadeIn 2s;
+    color: #151217;
+  }
+  
+  h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #DA001E;
+  }
+  
+  .search-sort-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+    background-color: #FFF;
+    color: #151217;
+  }
+  
+  .search-input:focus {
+    border-color: #DA001E;
+    outline: none;
+  }
+  
+  .sort-buttons {
+    display: flex;
+    gap: 1em;
+  }
+  
+  .sort-button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    border: none;
+    background-color: #DA001E;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .sort-button:hover {
+    background-color: #FDD90B;
+    transform: scale(1.05);
+    color: #151217;
+  }
+  
+  .artisan-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2em;
+  }
+  
+  .artisan-item {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 1em;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #FFF;
+  }
+  
+  .artisan-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .artisan-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .artisan-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  
+  .artisan-item img:hover {
+    transform: scale(1.05);
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

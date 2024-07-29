@@ -10,31 +10,47 @@ export class AlimentationComponent {
   sortDirection: 'asc' | 'desc' = 'asc';
 
   artisans = [
-    { id: 1, name: 'Artisan 1', price: 30, image: 'path/to/artisan1.jpg' },
-    { id: 2, name: 'Artisan 2', price: 20, image: 'path/to/artisan2.jpg' },
-    { id: 3, name: 'Artisan 3', price: 25, image: 'path/to/artisan3.jpg' },
-    { id: 4, name: 'Artisan 4', price: 40, image: 'path/to/artisan4.jpg' },
-    { id: 5, name: 'Artisan 5', price: 35, image: 'path/to/artisan5.jpg' },
-    { id: 6, name: 'Artisan 6', price: 45, image: 'path/to/artisan6.jpg' }
+    { id: 1, name: 'Vallis Bellemare', specialty: 'Plombier', location: 'Vienne', note: 4 },
+  { id: 2, name: 'Amitee Lécuyer', specialty: 'Couturier', location: 'Annecy', note: 4.5 },
+  { id: 3, name: 'Leala Dennis', specialty: 'Coiffeur', location: 'Chambéry', note: 3.8 },
+  { id: 4, name: 'Chocolaterie Labbé', specialty: 'Chocolatier', location: 'Grenoble', note: 4.9 },
+  { id: 5, name: 'Claude Quinn', specialty: 'Bijoutier', location: 'Aix-les-bains', note: 4.2 },
+  { id: 6, name: 'Valérie Laderoute', specialty: 'Toiletteur', location: 'Valence', note: 4.5 },
+  { id: 7, name: 'Boutot & fils', specialty: 'Menuisier', location: 'Bourg-en-bresse', note: 4.7 },
+  { id: 8, name: 'CM Graphisme', specialty: 'Webdesign', location: 'Valence', note: 4.4 },
+  { id: 9, name: 'Orville Salmons', specialty: 'Chauffagiste', location: 'Evian', note: 5 },
+  { id: 10, name: 'Au pain chaud', specialty: 'Boulanger', location: 'Montélimar', note: 4.8 },
+  { id: 11, name: 'Boucherie Dumont', specialty: 'Boucher', location: 'Lyon', note: 4.5 },
+  { id: 12, name: 'Mont Blanc Eléctricité', specialty: 'Electricien', location: 'Chamonix', note: 4.5 },
+  { id: 13, name: 'Traiteur Truchon', specialty: 'Traiteur', location: 'Privas', note: 4.1 },
+  { id: 14, name: 'Le monde des fleurs', specialty: 'Fleuriste', location: 'Annonay', note: 4.6 },
+  { id: 15, name: 'Royden Charbonneau', specialty: 'Carrossier', location: 'Saint-Priest', note: 3.8 },
+  { id: 16, name: 'Ernest Carignan', specialty: 'Ferronier', location: 'Le Puy-en-Velay', note: 5 },
+  { id: 17, name: "C'est sup'hair", specialty: 'Coiffeur', location: 'Romans-sur-Isère', note: 4.1 }
   ];
 
   filteredArtisans() {
-    let filtered = this.artisans.filter(artisan => 
+    // Filtrer pour n'inclure que les artisans avec les IDs 4, 9 et 10
+    let filtered = this.artisans.filter(artisan => [4, 10, 11].includes(artisan.id));
+  
+    // Filtrer par le terme de recherche
+    filtered = filtered.filter(artisan => 
       artisan.name.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
-
+  
+    // Trier les artisans par note
     filtered = filtered.sort((a, b) => {
       if (this.sortDirection === 'asc') {
-        return a.price - b.price;
+        return a.note - b.note;
       } else {
-        return b.price - a.price;
+        return b.note - a.note;
       }
     });
-
-    return filtered.slice(-3); // Return the last three artisans
+  
+    return filtered; // Retourne les artisans filtrés
   }
-
-  sortByPrice(direction: 'asc' | 'desc') {
+  
+  sortByNote(direction: 'asc' | 'desc') {
     this.sortDirection = direction;
   }
 }
