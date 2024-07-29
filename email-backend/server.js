@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 const cors = require('cors'); // Ajoutez ceci
 
 const app = express();
-const port = 4200;
+const port = 3000;
 
 // Middleware
 app.use(cors()); // Utilisez cors ici
