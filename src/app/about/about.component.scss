@@ -1,152 +1,153 @@
 .about-container {
-    padding: 2em;
-    max-width: 800px;
-    margin: 0 auto;
-    animation: fadeIn 2s;
-    background-color: #F9D0A3; /* Couleur de fond douce */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2em;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeIn 2s;
+  background-color: #f1f8fc; /* Fond bleu clair */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #00497c; /* Bleu foncé pour le titre */
+  animation: fadeInDown 1s;
+}
+
+h2 {
+  font-size: 2em;
+  color: #0074c7; /* Bleu clair pour le sous-titre */
+  animation: fadeInUp 1s;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+  text-align: justify;
+  animation: fadeIn 2s;
+  color: #384050; /* Gris foncé pour le texte */
+}
+
+.contact-form {
+  background: #ffffff; /* Fond blanc pour le formulaire de contact */
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s;
+}
+
+.form-group {
+  margin-bottom: 1.5em;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  color: #384050; /* Gris foncé pour le texte des labels */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1em;
+  border: 1px solid #0074c7; /* Bordure bleu clair */
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #00497c; /* Bordure bleu foncé lors du focus */
+  outline: none;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 1em;
+  font-size: 1.2em;
+  border: none;
+  background-color: #0074c7; /* Bleu clair pour le bouton */
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #00497c; /* Bleu foncé au survol */
+  transform: scale(1.05);
+  color: #ffffff; /* Texte blanc au survol */
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
-  h1, h2 {
-    text-align: center;
-    margin-bottom: 1em;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  h1 {
-    font-size: 2.5em;
-    color: #151217; /* Couleur du texte principale */
-    animation: fadeInDown 1s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  h2 {
-    font-size: 2em;
-    color: #DA001E; /* Couleur du sous-titre */
-    animation: fadeInUp 1s;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 1.5em;
-    text-align: justify;
-    animation: fadeIn 2s;
-    color: #151217; /* Couleur du texte principale */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .contact-form {
-    background: #FFF; /* Fond blanc */
-    padding: 2em;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    animation: fadeInUp 1s;
+  to {
+    opacity: 1;
   }
-  
-  .form-group {
-    margin-bottom: 1.5em;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5em;
-    font-weight: bold;
-    color: #151217; /* Couleur du texte principale */
-  }
-  
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 0.5em;
-    font-size: 1em;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    transition: border-color 0.3s;
-  }
-  
-  .form-group input:focus,
-  .form-group textarea:focus {
-    border-color: #DA001E; /* Couleur d'accentuation */
-    outline: none;
-  }
-  
-  .submit-button {
-    display: block;
-    width: 100%;
+}
+
+@media (max-width: 768px) {
+  .about-container {
     padding: 1em;
-    font-size: 1.2em;
-    border: none;
-    background-color: #DA001E; /* Couleur du bouton */
-    color: white;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s, transform 0.3s;
   }
-  
-  .submit-button:hover {
-    background-color: #FDD90B; /* Couleur au survol */
-    transform: scale(1.05);
-    color: #151217; /* Texte noir au survol */
+
+  h1 {
+    font-size: 2em;
   }
-  
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+  h2 {
+    font-size: 1.5em;
   }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+  p {
+    font-size: 1em;
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+
+  .contact-form {
+    padding: 1em;
   }
-  
-  @media (max-width: 768px) {
-    .about-container {
-      padding: 1em;
-    }
-  
-    h1 {
-      font-size: 2em;
-    }
-  
-    h2 {
-      font-size: 1.5em;
-    }
-  
-    p {
-      font-size: 1em;
-    }
-  
-    .contact-form {
-      padding: 1em;
-    }
-  
-    .submit-button {
-      font-size: 1em;
-    }
+
+  .submit-button {
+    font-size: 1em;
   }
-  
-  .nocolor {
-    text-decoration: none;
-    color: inherit;
-  }
+}
+
+.nocolor {
+  text-decoration: none;
+  color: inherit;
+}
+
   

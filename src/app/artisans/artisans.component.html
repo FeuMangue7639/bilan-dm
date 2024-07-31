@@ -7,8 +7,13 @@
   <div class="details">
     <p>Spécialité: {{ artisan.specialty }}</p>
     <p>Localisation: {{ artisan.location }}</p>
-    <p class="email">{{ artisan.email }}</p>
-    <p class="website">{{ artisan.website }}</p>
+    <p class="email">
+      <a [href]="'mailto:' + artisan.email">{{ artisan.email }}</a>
+    </p>
+    <p class="website">
+      <a *ngIf="artisan.website" [href]="artisan.website" target="_blank" rel="noopener noreferrer">{{ artisan.website }}</a>
+      <span *ngIf="!artisan.website">Non disponible</span>
+    </p>
   </div>
 
   <div class="about">
@@ -16,6 +21,5 @@
   </div>
 </div>
 
-
-
 <app-contact-form></app-contact-form>
+

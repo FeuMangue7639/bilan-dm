@@ -1,58 +1,63 @@
 .contact-form-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #384050; /* Bordure gris foncé */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f1f8fc; /* Fond bleu clair */
+  margin-bottom: 30px;
   
-    h2 {
-      text-align: center;
-      color: #333;
-    }
-  
-    .form-group {
-      margin-bottom: 15px;
-  
-      label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-        color: #555;
-      }
-  
-      input,
-      textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 1em;
-      }
-  
-      textarea {
-        resize: vertical;
-      }
-    }
-  
-    button {
+  h2 {
+    text-align: center;
+    color: #00497c; /* Titre bleu foncé */
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+
+    label {
       display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #384050; /* Couleur du texte des labels */
+    }
+
+    input,
+    textarea {
       width: 100%;
       padding: 10px;
-      background-color: #007bff;
-      color: white;
-      border: none;
+      border: 1px solid #0074c7; /* Bordure bleu clair */
       border-radius: 5px;
-      font-size: 1.1em;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-  
-      &:hover {
-        background-color: #0056b3;
-      }
+      font-size: 1em;
+      background-color: #ffffff; /* Fond blanc pour les champs */
+      color: #384050; /* Couleur du texte dans les champs */
+    }
+
+    textarea {
+      resize: vertical;
     }
   }
+
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #0074c7; /* Couleur de fond du bouton */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #00497c; /* Couleur de fond du bouton au survol */
+    }
+  }
+}
+
 
 
 

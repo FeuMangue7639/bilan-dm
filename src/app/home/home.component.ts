@@ -54,4 +54,9 @@ export class HomeComponent {
   sortByNote(direction: 'asc' | 'desc') {
     this.sortDirection = direction;
   }
+  getStars(note: number): number[] {
+    const fullStars = Math.floor(note); // Nombre d'étoiles pleines
+    const halfStar = note % 1 >= 0.5; // Vérifie si une étoile partielle est nécessaire
+    return [...Array(fullStars).fill(1), ...(halfStar ? [0.5] : []), ...Array(5 - fullStars - (halfStar ? 1 : 0)).fill(0)];
+  }
 }
