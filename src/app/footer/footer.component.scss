@@ -1,32 +1,49 @@
+/* Styles pour le footer */
 .footer {
-    background-color: #343a40;
-    padding: 1rem;
-    color: white;
-    text-align: center;
-  
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+  background-color: #00497c; /* Couleur de fond du footer */
+  padding: 1rem 2rem; /* Espacement interne du footer */
+  color: #f1f8fc; /* Couleur du texte */
+  text-align: center; /* Centre le texte et les icônes */
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto; /* Centre le contenu du footer */
+  }
+
+  .footer-left {
+    flex: 1;
+    .numbers {
+      margin: 0; /* Élimine les marges par défaut */
+      font-size: 0.9em; /* Taille du texte pour le copyright */
     }
-  
-    .footer-left {
-      .numbers {
-        margin: 0;
+  }
+
+  .footer-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Aligne les icônes à droite */
+    gap: 1rem; /* Espace entre les icônes */
+
+    a {
+      color: #f1f8fc; /* Couleur des icônes */
+      margin: 0 0.5rem; /* Espacement entre les icônes */
+      font-size: 1.5rem; /* Taille des icônes */
+      transition: color 0.3s, transform 0.3s; /* Transition pour les effets de survol */
+
+      &:hover {
+        color: #82b864; /* Couleur des icônes au survol */
+        transform: scale(1.1); /* Agrandit légèrement l'icône au survol */
       }
-    }
-  
-    .footer-right {
-      a {
-        color: white;
-        margin: 0 0.5rem;
-        font-size: 1.5rem;
-  
-        &:hover {
-          color: #ffc107;
-        }
+
+      i {
+        display: inline-block; /* Assure que les icônes sont correctement affichées */
       }
     }
   }
+}
+
   
   

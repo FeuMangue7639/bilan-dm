@@ -5,14 +5,21 @@
   text-align: center;
   margin: 20px auto;
   padding: 20px;
-  border: 1px solid #FDD90B; /* Bordure jaune */
+  border: 1px solid #0074c7; /* Bordure bleue */
   border-radius: 10px;
   max-width: 800px; /* Augmenter la largeur maximale */
   width: 100%; /* Assurer que le conteneur occupe toute la largeur possible */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #F9D0A3; /* Fond de conteneur */
-  margin-bottom: 110px;
-  color: #151217; /* Couleur de texte par défaut */
+  background-color: #f1f8fc; /* Fond de conteneur */
+  margin-bottom: 50px;
+  margin-top: 30px;
+  color: #384050; /* Couleur de texte par défaut */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transition pour l'effet de survol */
+
+  &:hover {
+    transform: translateY(-5px); /* Légère élévation au survol */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+  }
 
   .header {
     display: flex;
@@ -21,15 +28,15 @@
     margin-bottom: 20px;
 
     h1 {
-      color: #DA001E; /* Titre en rouge */
+      color: #0074c7; /* Titre en bleu */
       margin: 0;
-      font-size: 1.8em; /* Augmenter la taille du titre */
+      font-size: 2em; /* Augmenter la taille du titre */
       text-align: left;
       flex: 1;
     }
 
     .note {
-      color: #DA001E; /* Note en rouge */
+      color: #0074c7; /* Note en bleu */
       font-size: 1.5em;
       margin: 0;
       text-align: right;
@@ -52,10 +59,12 @@
 
     .email, .website {
       font-size: 1em;
-      color: #007bff; /* Couleur bleue pour les liens */
+      color: #00497c; /* Couleur bleue foncée pour les liens */
       text-decoration: none;
+      transition: color 0.3s; /* Transition pour la couleur des liens */
       
       &:hover {
+        color: #0074c7; /* Couleur bleue plus claire au survol */
         text-decoration: underline; /* Soulignement au survol */
       }
     }
@@ -63,23 +72,27 @@
     .email::before {
       content: "E-mail: ";
       font-weight: bold;
+      color: #384050; /* Couleur des étiquettes */
     }
 
     .website::before {
       content: "Site: ";
       font-weight: bold;
+      color: #384050; /* Couleur des étiquettes */
     }
   }
 
   .about {
     margin-top: 20px;
     width: 100%;
-    text-align: right;
+    text-align: left; /* Alignement du texte à gauche pour une meilleure lisibilité */
 
     p {
       margin: 0;
       font-size: 1.2em;
-      padding-left: 300px;
+      padding-left: 20px; /* Réduit l'espacement pour une meilleure apparence */
+      text-align: justify; /* Justifie le texte pour une meilleure apparence */
+      color: #384050; /* Couleur du texte */
     }
   }
 }
