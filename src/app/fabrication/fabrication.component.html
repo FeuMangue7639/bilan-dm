@@ -1,24 +1,40 @@
-<div class="home-container">
-    <h1>Fabrication</h1>
-    <p>Trouve un artisan spécialisé dans le secteur de la fabrication.</p>
-  
-    <h2>Catalogue des artisans</h2>
-    <div class="search-sort-container">
-      <input type="text" placeholder="Rechercher par nom" [(ngModel)]="searchTerm" class="search-input">
-      <div class="sort-buttons">
-        <button (click)="sortByNote('asc')" class="sort-button">Note croissante</button>
-        <button (click)="sortByNote('desc')" class="sort-button">Note décroissante</button>
+<div class="app-container">
+  <div class="content">
+    <div class="home-container">
+      <h1>Fabrication</h1>
+      <p>Trouve un artisan spécialisé dans le secteur de la fabrication.</p>
+    
+      <h2>Catalogue des artisans</h2>
+      <div class="search-sort-container">
+        <input type="text" placeholder="Rechercher par nom" [(ngModel)]="searchTerm" class="search-input">
+        <div class="sort-buttons">
+          <button (click)="sortByNote('asc')" class="sort-button">Note croissante</button>
+          <button (click)="sortByNote('desc')" class="sort-button">Note décroissante</button>
+        </div>
       </div>
-    </div>
-  
-    <div class="artisan-list">
-      <div *ngFor="let artisan of filteredArtisans()" class="artisan-item">
-        <a [routerLink]="['/artisan', artisan.id]" class="artisan-link">
-          <h3>{{ artisan.name }}</h3>
-          <p class="numbers">Spécialité: {{ artisan.specialty }}</p>
-          <p class="location">Localisation: {{ artisan.location }}</p>
-          <p class="note">Note: {{ artisan.note }} étoiles</p>
-        </a>
+    
+      <div class="artisan-list">
+        <div *ngFor="let artisan of filteredArtisans()" class="artisan-item">
+          <a [routerLink]="['/artisan', artisan.id]" class="artisan-link">
+            <h3>{{ artisan.name }}</h3>
+            <p class="numbers">Spécialité: {{ artisan.specialty }}</p>
+            <p class="location">Localisation: {{ artisan.location }}</p>
+            <p class="note">
+              Note:
+              <ng-container *ngFor="let star of getStars(artisan.note)">
+                <i class="fa" 
+                   [ngClass]="{
+                     'fa-star': star.type === 'full',
+                     'fa-star-half-alt': star.type === 'half',
+                     'fa-star-o': star.type === 'empty'
+                   }">
+                </i>
+              </ng-container>
+            </p>
+          </a>
+        </div>
       </div>
     </div>
   </div>
+</div>
+

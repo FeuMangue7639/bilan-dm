@@ -6,6 +6,25 @@ import { Component } from '@angular/core';
   styleUrl: './batiment.component.scss'
 })
 export class BatimentComponent {
+  getStars(note: number) {
+    const fullStars = Math.floor(note);
+    const halfStar = note % 1 >= 0.5;
+    const totalStars = 5;
+    const stars = [];
+
+    for (let i = 0; i < totalStars; i++) {
+      if (i < fullStars) {
+        stars.push({ type: 'full' });
+      } else if (i === fullStars && halfStar) {
+        stars.push({ type: 'half' });
+      } else {
+        stars.push({ type: 'empty' });
+      }
+    }
+
+    return stars;
+  }
+
   searchTerm: string = '';
   sortDirection: 'asc' | 'desc' = 'asc';
 

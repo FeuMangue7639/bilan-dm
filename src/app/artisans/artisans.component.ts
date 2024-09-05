@@ -16,5 +16,24 @@ export class ArtisansComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.artisan = this.artisansService.getArtisan(id);
   }
+
+  getStars(note: number) {
+    const fullStars = Math.floor(note);
+    const halfStar = note % 1 >= 0.5;
+    const totalStars = 5;
+    const stars = [];
+
+    for (let i = 0; i < totalStars; i++) {
+      if (i < fullStars) {
+        stars.push({ type: 'full' });
+      } else if (i === fullStars && halfStar) {
+        stars.push({ type: 'half' });
+      } else {
+        stars.push({ type: 'empty' });
+      }
+    }
+
+    return stars;
+  }
 }
 

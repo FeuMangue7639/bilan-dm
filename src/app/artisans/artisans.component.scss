@@ -99,6 +99,21 @@
 
 
 
+.artisan-detail-container {
+  
+
+  .note {
+    display: flex;
+    align-items: center; /* Centre les étoiles verticalement */
+  }
+
+  .fa-star,
+  .fa-star-half-alt,
+  .fa-star-o {
+    color: #0074C7; /* Couleur des étoiles */
+    font-size: 1.2em; /* Taille des étoiles */
+  }
+}
 
   
   

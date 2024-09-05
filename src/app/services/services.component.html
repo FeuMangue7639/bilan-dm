@@ -17,7 +17,18 @@
           <h3>{{ artisan.name }}</h3>
           <p class="numbers">Spécialité: {{ artisan.specialty }}</p>
           <p class="location">Localisation: {{ artisan.location }}</p>
-          <p class="note">Note: {{ artisan.note }} étoiles</p>
+          <p class="note">
+            Note:
+            <ng-container *ngFor="let star of getStars(artisan.note)">
+              <i class="fa" 
+                 [ngClass]="{
+                   'fa-star': star.type === 'full',
+                   'fa-star-half-alt': star.type === 'half',
+                   'fa-star-o': star.type === 'empty'
+                 }">
+              </i>
+            </ng-container>
+          </p>
         </a>
       </div>
     </div>
