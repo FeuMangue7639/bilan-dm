@@ -7,7 +7,7 @@ const app = express();
 const port = 4200;
 
 // Middleware
-app.use(cors()); // Utilisez cors ici
+app.use(cors({origin: 'http://localhost:4200'})); // Utilisez cors ici
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -15,12 +15,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const transporter = nodemailer.createTransport({
   host: 'localhost',
   port: 1025,
-  secure: false,
-  auth: {
-    user: '', // Laissez vide pour MailDev
-    pass: ''  // Laissez vide pour MailDev
+  secure: false
   }
-});
+);
 
 // Route pour envoyer les e-mails
 app.post('/send-email', (req, res) => {

@@ -6,6 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+  getStars(note: number) {
+    const fullStars = Math.floor(note);
+    const halfStar = note % 1 >= 0.5;
+    const totalStars = 5;
+    const stars = [];
+
+    for (let i = 0; i < totalStars; i++) {
+      if (i < fullStars) {
+        stars.push({ type: 'full' });
+      } else if (i === fullStars && halfStar) {
+        stars.push({ type: 'half' });
+      } else {
+        stars.push({ type: 'empty' });
+      }
+    }
+
+    return stars;
+  }
+
   searchTerm: string = '';
   sortDirection: 'asc' | 'desc' = 'asc';
 
@@ -53,10 +72,5 @@ export class HomeComponent {
   
   sortByNote(direction: 'asc' | 'desc') {
     this.sortDirection = direction;
-  }
-  getStars(note: number): number[] {
-    const fullStars = Math.floor(note); // Nombre d'étoiles pleines
-    const halfStar = note % 1 >= 0.5; // Vérifie si une étoile partielle est nécessaire
-    return [...Array(fullStars).fill(1), ...(halfStar ? [0.5] : []), ...Array(5 - fullStars - (halfStar ? 1 : 0)).fill(0)];
   }
 }

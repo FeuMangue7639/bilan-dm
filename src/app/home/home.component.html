@@ -5,14 +5,14 @@
   <div class="info-box">
     <h3>Comment trouver mon artisan ?</h3>
     <ol>
-      <li>Choisir la catégorie d’artisanat dans le menu.</li>
+      <li>Choisir la catégorie d'artisanat dans le menu.</li>
       <li>Choisir un artisan</li>
       <li>Le contacter via le formulaire de contact.</li>
       <li>Une réponse sera apportée sous 48h.</li>
     </ol>
   </div>
 
-  <h2>Catalogue des artisans</h2>
+  <h2>Les artisans du mois !</h2>
   <div class="search-sort-container">
     <input type="text" placeholder="Rechercher par nom" [(ngModel)]="searchTerm" class="search-input">
     <div class="sort-buttons">
@@ -27,7 +27,18 @@
         <h3>{{ artisan.name }}</h3>
         <p class="numbers">Spécialité: {{ artisan.specialty }}</p>
         <p class="location">Localisation: {{ artisan.location }}</p>
-        <p class="note">Note: {{ artisan.note }} étoiles</p> <i class="bi bi-star-fill" style="color: #0074c7;"></i>
+        <p class="note">
+          Note:
+          <ng-container *ngFor="let star of getStars(artisan.note)">
+            <i class="fa" 
+               [ngClass]="{
+                 'fa-star': star.type === 'full',
+                 'fa-star-half-alt': star.type === 'half',
+                 'fa-star-o': star.type === 'empty'
+               }">
+            </i>
+          </ng-container>
+        </p>
       </a>
     </div>
   </div>
