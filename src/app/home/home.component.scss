@@ -231,4 +231,43 @@ input {
 
 
 
-  
+.home-container {
+  // Styles généraux pour la page
+
+  .search-sort-container {
+    display: flex;
+    flex-direction: column; // Empile les éléments verticalement sur les petits écrans
+    margin-top: 20px; // Espacement au-dessus du conteneur de recherche
+
+    .search-input {
+      width: 100%; // Assure que le champ de recherche occupe toute la largeur du conteneur
+      max-width: 100%; // Évite que le champ de recherche dépasse le conteneur
+      padding: 10px; // Ajoute du padding pour le confort
+      font-size: 16px; // Taille de police lisible sur mobile
+      box-sizing: border-box; // Inclut padding et bordures dans la largeur totale
+    }
+
+    .sort-buttons {
+      display: flex;
+      justify-content: space-between; // Espacement entre les boutons
+      margin-top: 10px; // Espacement au-dessus des boutons
+
+      .sort-button {
+        padding: 10px; // Ajoute du padding pour les boutons
+        font-size: 14px; // Taille de police des boutons
+      }
+    }
+  }
+
+  // Media query pour les écrans plus larges
+  @media (min-width: 768px) {
+    .search-sort-container {
+      flex-direction: row; // Dispose les éléments horizontalement sur les grands écrans
+
+      .search-input {
+        width: auto; // Réinitialise la largeur pour les grands écrans
+        max-width: 600px; // Largeur maximale pour les grands écrans
+      }
+    }
+  }
+}
