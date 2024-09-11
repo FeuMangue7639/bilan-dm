@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+
+
+
 
 @Component({
   selector: 'app-home',
@@ -73,4 +77,10 @@ export class HomeComponent {
   sortByNote(direction: 'asc' | 'desc') {
     this.sortDirection = direction;
   }
+  constructor(private sanitizer: DomSanitizer) {}
+
+getSafeHtml(html: string) {
+  return this.sanitizer.bypassSecurityTrustHtml(html);
 }
+}
+
