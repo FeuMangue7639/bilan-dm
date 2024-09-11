@@ -50,7 +50,7 @@ export class BatimentComponent {
   ];
 
   filteredArtisans() {
-    // Filtrer pour n'inclure que les artisans avec les IDs 4, 9 et 10
+   
     let filtered = this.artisans.filter(artisan => [1, 7, 9, 12, 13].includes(artisan.id));
   
     // Filtrer par le terme de recherche

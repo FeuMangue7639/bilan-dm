@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ContactService } from '../contact.service'; // Assurez-vous que le chemin est correct
+import { ContactService } from '../contact.service'; 
 
 @Component({
   selector: 'app-contact-form',
@@ -26,7 +26,7 @@ export class ContactFormComponent {
         
         // Afficher le message de succès
         this.successMessage = 'Votre message a été envoyé avec succès !';
-        this.errorMessage = ''; // Clear any previous error
+        this.errorMessage = ''; // Clear
         
         // Réinitialiser le formulaire après l'envoi
         this.contact = {
@@ -40,11 +40,11 @@ export class ContactFormComponent {
         
         // Afficher le message d'erreur
         this.errorMessage = 'Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer.';
-        this.successMessage = ''; // Clear any previous success message
+        this.successMessage = ''; // Clear
       });
     } else {
       this.errorMessage = 'Veuillez remplir tous les champs du formulaire.';
-      this.successMessage = ''; // Clear any previous success message
+      this.successMessage = ''; // Clear 
     }
   }
 }

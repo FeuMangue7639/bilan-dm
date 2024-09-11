@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class ContactService {
 
-  private apiUrl = 'http://localhost:4200/send-email'; // URL de votre serveur Node.js
+  private apiUrl = 'http://localhost:4200/send-email'; // URL du serveur Node.js
 
   constructor(private http: HttpClient) { }
 
